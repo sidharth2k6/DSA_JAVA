@@ -145,4 +145,61 @@ public class ArrayOperations {
             return binarySearchRecursion(target, left, mid - 1);
         }
     }
+
+    public int bubbleSort(){
+        int temp = 0;
+        int steps = 0;
+
+        for(int i = 1; i <= size; i++){
+            for(int j = 0; j < size - i; j++){
+                if(arr[j] > arr[j + 1]){
+                    temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
+                }
+                steps++;
+            }
+            steps++;
+        }
+        return steps;
+    }
+
+    public int selectionSort(){
+        int temp = 0;
+        int steps = 0;
+        int minIndex = 0;
+
+        for(int i = 0; i < size - 1; i++){
+            minIndex = i;
+            for(int j = i + 1; j < size; j++){
+                if(arr[minIndex] > arr[j]){
+                    minIndex = j;
+                }
+                steps++;
+            }
+            temp = arr[i];
+            arr[i] = arr[minIndex];
+            arr[minIndex] = temp;
+        }
+        return steps;
+    }
+
+    public int insertionSort(){
+        int key;
+        int steps = 0;
+
+        for(int i = 1; i < size; i++){
+            int j = i - 1;
+            key = arr[i];
+
+            while(j >= 0 && arr[j] > key){
+                arr[j + 1] = arr[j];
+                j--;
+                steps++;
+            }
+            arr[j + 1] = key;
+        }
+
+        return steps;
+    }
 }
