@@ -8,8 +8,8 @@ public class Main {
         System.out.println("Before sorting");
         arr.show();
 
-        System.out.println("Steps: " + arr.selectionSort());
-
+//        System.out.println("Steps: " + arr.selectionSort());
+        arr.quickSort(arr.arr, 0, arr.size - 1);
         System.out.println("After sorting");
         arr.show();
 
